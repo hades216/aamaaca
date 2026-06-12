@@ -185,6 +185,9 @@ export function Footer() {
               <p className="m-0 text-[9px] text-neutral-600 font-light mt-0.5">
                 Accredited by Continuous Professional Development Assembly (UK). PMC / PMDC aligned guidelines.
               </p>
+              <p className="m-0 text-[9px] text-neutral-500 font-light mt-1">
+                Powered by <a href="https://magnatecreative.com" target="_blank" rel="noopener noreferrer" className="text-[#E1A140] hover:text-white hover:underline underline-offset-2 transition-colors">magnatecreative.com</a>
+              </p>
             </div>
 
             {/* Back to top scroll button */}
