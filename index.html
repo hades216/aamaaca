@@ -8,15 +8,37 @@
       // Defensive guard to prevent 'Cannot redefine property: ethereum' type errors 
       // caused by third-party browser extensions inside preview iframe environments.
       try {
-        let ethereumStore = undefined;
-        Object.defineProperty(window, 'ethereum', {
-          get() { return ethereumStore; },
-          set(val) { ethereumStore = val; },
-          configurable: true,
-          enumerable: true
-        });
+        const desc = Object.getOwnPropertyDescriptor(window, 'ethereum');
+        if (!desc || desc.configurable) {
+          let ethereumStore = window.ethereum;
+          Object.defineProperty(window, 'ethereum', {
+            get() { return ethereumStore; },
+            set(val) { ethereumStore = val; },
+            configurable: true,
+            enumerable: true
+          });
+        }
       } catch (e) {
-        console.warn("AAMA Web3 Sandbox Guard:", e);
+        console.warn("AAMA Web3 Sandbox Guard initial define failed:", e);
+      }
+
+      // Intercept Object.defineProperty requests for window.ethereum to gracefully
+      // absorb any errors thrown when external wallet extensions try to redefine it.
+      try {
+        const originalDefineProperty = Object.defineProperty;
+        Object.defineProperty = function(obj, prop, descriptor) {
+          if (obj === window && prop === 'ethereum') {
+            try {
+              return originalDefineProperty.apply(this, arguments);
+            } catch (err) {
+              console.warn("Prevented uncaught TypeError for ethereum property redefinition:", err);
+              return obj;
+            }
+          }
+          return originalDefineProperty.apply(this, arguments);
+        };
+      } catch (e) {
+        console.warn("AAMA Web3 Object.defineProperty patch failed:", e);
       }
     </script>
   </head>
