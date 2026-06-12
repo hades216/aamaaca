@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Sparkles, Calendar, ArrowRight, UserCheck, CheckCircle, HelpCircle } from "lucide-react";
 // @ts-ignore
-import heroAestheticImg from "../assets/images/hero_aesthetic_model_1780599397043.png";
+import heroAestheticImg from "../assets/images/bright_hero_model_1781221945218.jpg";
 
 interface HeroProps {
   onRegisterClick: () => void;
@@ -260,7 +260,7 @@ export function Hero({ onRegisterClick, onExploreCourses, onSelectCourseFilter }
 
           {/* --- RIGHT HAND SIDE: INTERACTIVE SILHOUETTE MEDICAL MAP --- */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center relative w-full" id="hero-right-col">
-            <div className="w-full max-w-[400px] aspect-[4/5] bg-neutral-900 border border-white/10 rounded-none relative p-0 overflow-hidden shadow-2xl flex items-center justify-center group/facemap-container">
+            <div className="w-full max-w-[400px] aspect-[4/5] bg-neutral-900 border border-white/10 rounded-none relative p-0 overflow-hidden shadow-none flex items-center justify-center group/facemap-container">
               
               {/* High-end generated medical model photo backdrop */}
               <div className="absolute inset-0 z-0">
@@ -268,11 +268,8 @@ export function Hero({ onRegisterClick, onExploreCourses, onSelectCourseFilter }
                   src={heroAestheticImg}
                   alt="Clinical Aesthetic Medicine Mapping Model"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover opacity-75 group-hover/facemap-container:scale-[1.03] transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover opacity-95 group-hover/facemap-container:scale-[1.03] group-hover/facemap-container:opacity-100 transition-all duration-700 ease-out"
                 />
-                {/* Subtle high-contrast screen overlays */}
-                <div className="absolute inset-0 bg-neutral-950/20 mix-blend-multiply"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/25 to-transparent"></div>
               </div>
 
               {/* Patient Profile Outline SVG overlay (very subtle) */}

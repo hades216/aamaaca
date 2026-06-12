@@ -2,11 +2,11 @@ import React, { useMemo } from "react";
 import { Clock, Award, ShieldCheck, HeartPulse, Sparkles, BookOpen, Layers, Users, Syringe } from "lucide-react";
 
 // @ts-ignore
-import clinicalImg from "../assets/images/clinical_injection_aesthetic_1780601932548.png";
+import clinicalImg from "../assets/images/clear_clinical_treatment_1781221754294.jpg";
 // @ts-ignore
-import suiteImg from "../assets/images/luxury_clinical_suite_1780601950907.png";
+import suiteImg from "../assets/images/bright_clinical_suite_1781221728289.jpg";
 // @ts-ignore
-import laserImg from "../assets/images/aesthetic_laser_tech_1780601970136.png";
+import laserImg from "../assets/images/clear_laser_device_1781221773224.jpg";
 
 interface Course {
   id: string;
@@ -219,9 +219,9 @@ export function Courses({ selectedFilter, onSelectFilter, onApplyForCourse }: Co
                     src={course.id === "botox" || course.id === "fillers" ? clinicalImg : course.id === "lasers" ? laserImg : suiteImg}
                     alt={course.name}
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover opacity-65 group-hover:scale-105 group-hover:opacity-80 transition-all duration-700 ease-out"
+                    className="w-full h-full object-cover opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-neutral-950/20"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent to-neutral-950/10"></div>
                 </div>
 
                 {/* Category & Title */}

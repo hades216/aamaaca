@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { X, ChevronLeft, ChevronRight, Play, Pause, Award, MapPin, Zap, UserCheck, Flame } from "lucide-react";
 
 // @ts-ignore
-import clinicalImg from "../assets/images/clinical_injection_aesthetic_1780601932548.png";
+import clinicalImg from "../assets/images/clear_clinical_treatment_1781221754294.jpg";
 // @ts-ignore
-import suiteImg from "../assets/images/luxury_clinical_suite_1780601950907.png";
+import suiteImg from "../assets/images/bright_clinical_suite_1781221728289.jpg";
 // @ts-ignore
-import laserImg from "../assets/images/aesthetic_laser_tech_1780601970136.png";
+import laserImg from "../assets/images/clear_laser_device_1781221773224.jpg";
 
 interface HighlightStory {
   id: string;
@@ -35,7 +35,7 @@ export function Highlights() {
     {
       id: "masterBotox",
       tag: "#masterBotox",
-      imageUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=200", // Clinical syringe aesthetics
+      imageUrl: clinicalImg,
       title: "Botox Masterclass",
       slides: [
         {
@@ -71,7 +71,7 @@ export function Highlights() {
     {
       id: "karachi",
       tag: "#karachi",
-      imageUrl: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&q=80&w=200", // Luxury clinical space
+      imageUrl: suiteImg,
       title: "Karachi Workshops",
       slides: [
         {
@@ -107,7 +107,7 @@ export function Highlights() {
     {
       id: "lasercourse",
       tag: "#lasercourse",
-      imageUrl: "https://images.unsplash.com/photo-1519494549699-1067d448595d?auto=format&fit=crop&q=80&w=200", // Medical lasers glow
+      imageUrl: laserImg,
       title: "Laser Course",
       slides: [
         {
@@ -143,7 +143,7 @@ export function Highlights() {
     {
       id: "highlights",
       tag: "Highlights",
-      imageUrl: "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&q=80&w=200", // Clinical team group
+      imageUrl: suiteImg,
       title: "AAMA Legacy",
       slides: [
         {
@@ -256,15 +256,13 @@ export function Highlights() {
               <div className="relative w-24 h-24 rounded-full p-[2px] border-2 border-[#E1A140] transform transition-all duration-500 ease-out group-hover/bubble:scale-110 group-hover/bubble:rotate-12 group-hover/bubble:shadow-lg group-hover/bubble:shadow-amber-500/20">
                 <div className="absolute inset-[1px] bg-neutral-950 rounded-full"></div>
                 {/* Image Inside Circle */}
-                <div className="relative w-full h-full overflow-hidden rounded-full border border-neutral-900">
+                <div className="relative w-full h-full overflow-hidden rounded-full border border-neutral-900 bg-neutral-950">
                   <img
                     src={story.imageUrl}
                     alt={story.tag}
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover transform transition-transform duration-700 ease-in-out group-hover/bubble:scale-115 filter grayscale hover:grayscale-0 group-hover/bubble:grayscale-0 pointer-events-none"
+                    className="w-full h-full object-cover transform transition-transform duration-700 ease-in-out group-hover/bubble:scale-115 pointer-events-none"
                   />
-                  {/* Subtle red live badge */}
-                  <div className="absolute inset-0 bg-black/10 group-hover/bubble:bg-transparent transition-colors"></div>
                 </div>
               </div>
 
@@ -378,9 +376,9 @@ export function Highlights() {
                     src={currentSlide.bgImage}
                     alt={currentSlide.title}
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover opacity-25 filter brightness-[0.8]"
+                    className="w-full h-full object-cover opacity-45"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D0B0A] via-[#0D0B0A]/85 to-[#0D0B0A]/35"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D0B0A] via-[#0D0B0A]/80 to-[#0D0B0A]/15"></div>
                 </div>
               ) : (
                 <div className={`absolute inset-0 bg-gradient-to-b ${currentSlide.accentColor} opacity-5 mix-blend-color z-0`}></div>

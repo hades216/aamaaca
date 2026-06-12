@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Award, GraduationCap, Users, ShieldAlert, CheckCircle2, FlaskConical, Target, Quote } from "lucide-react";
 
 // @ts-ignore
-import suiteImg from "../assets/images/luxury_clinical_suite_1780601950907.png";
+import suiteImg from "../assets/images/bright_clinical_suite_1781221728289.jpg";
 
 export function About() {
   const [activeTab, setActiveTab] = useState<"mission" | "standards" | "methodology">("mission");
@@ -174,9 +174,9 @@ export function About() {
                 src={suiteImg}
                 alt="AAMA Clinical Training Theatre Karachi"
                 referrerPolicy="no-referrer"
-                className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover/bento-img:scale-105 transition-transform duration-700 ease-out z-0"
+                className="absolute inset-0 w-full h-full object-cover opacity-85 group-hover/bento-img:opacity-95 group-hover/bento-img:scale-105 transition-all duration-700 ease-out z-0"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent z-10"></div>
               <div className="relative z-20 text-left">
                 <span className="text-[9px] font-mono text-[#E1A140] tracking-[0.15em] uppercase bg-black/75 backdrop-blur-xs px-2 py-0.5 border border-[#E1A140]/30 font-extrabold">
                   CLINICAL THEATRE VAULT
